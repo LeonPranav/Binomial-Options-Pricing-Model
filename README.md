@@ -3,6 +3,7 @@
 I implemented the **Binomial Option Pricing Model** in Python, comparing a **naive (loop based)** implementation with a **vectorized NumPy implementation** to highlight performance differences.
 
 The project demonstrates:
+- Implements the **Cox–Ross–Rubinstein (CRR) binomial option pricing model**
 - Arbitrage free / No arbitrage option pricing
 - Backward induction on a binomial tree
 - The impact of NumPy vectorization vs Python loops
