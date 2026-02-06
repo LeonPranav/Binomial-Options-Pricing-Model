@@ -1,4 +1,4 @@
-# Binomial Option Pricing Model (Python)
+# Binomial Option Pricing Model For European Calls (Python)
 
 I implemented the **Binomial Option Pricing Model** in Python, comparing a **naive (loop based)** implementation with a **vectorized NumPy implementation** to highlight performance differences.
 
