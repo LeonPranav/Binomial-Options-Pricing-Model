@@ -25,7 +25,7 @@ d = 1/u       # ensure recombining tree
 opttype = 'C' # Option Type 'C' or 'P'
 
 @timing
-def binomial_tree_slow(K,T,S0,r,N,u,d,opttype='C'):
+def european_tree_slow(K,T,S0,r,N,u,d,opttype='C'):
     # precompute constants
     dt = T/N
     q = (np.exp(r*dt) - d) / (u-d)
@@ -49,10 +49,10 @@ def binomial_tree_slow(K,T,S0,r,N,u,d,opttype='C'):
 
     return C[0]
 
-print(binomial_tree_slow(K,T,S0,r,N,u,d,opttype='C'))
+european_tree_slow(K,T,S0,r,N,u,d,opttype='C')
 
 @timing
-def binomial_tree_fast(K,T,S0,r,N,u,d,opttype='C'):
+def european_tree_fast(K,T,S0,r,N,u,d,opttype='C'):
     # precompute constants
     dt = T/N
     q = (np.exp(r*dt) - d) / (u-d)
@@ -70,8 +70,9 @@ def binomial_tree_fast(K,T,S0,r,N,u,d,opttype='C'):
 
     return C[0]
 
-print(binomial_tree_fast(K,T,S0,r,N,u,d,opttype='C'))
+european_tree_fast(K,T,S0,r,N,u,d,opttype='C')
 
 for N in [3,50, 100, 1000, 5000]:
-    print("Slow:", binomial_tree_slow(K,T,S0,r,N,u,d,opttype='C'))
-    print("Fast:", binomial_tree_fast(K,T,S0,r,N,u,d,opttype='C'))
+    european_tree_slow(K,T,S0,r,N,u,d,opttype='C')
+    european_tree_fast(K,T,S0,r,N,u,d,opttype='C')
+
